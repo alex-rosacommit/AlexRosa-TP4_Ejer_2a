@@ -61,7 +61,7 @@ public class AlexRosa_TP4_Ejer_2a_Class {
 			System.out.println("Seleccione una opcion:");
 			System.out.println("1 --> Sumar los numeros.");
 			System.out.println("2 --> Multiplicar los numeros");
-			eleccion =leer.nextInt();
+			eleccion = leer.nextInt();
 		}while(eleccion != 1 && eleccion != 2);
 		
 		leer.close();
@@ -69,7 +69,7 @@ public class AlexRosa_TP4_Ejer_2a_Class {
 		if(eleccion == 1) {
 			int sumaNumeros = 0;
 			for(int i = 0;  i < numerosArray.length; i++) {
-				sumaNumeros = sumaNumeros + Integer.parseInt(numerosArray[i]); ;
+				sumaNumeros = sumaNumeros + Integer.parseInt(numerosArray[i]);
 			}
 			System.out.println("=====================================================");
 			System.out.println("La suma de los numeros es: " + sumaNumeros);
@@ -79,9 +79,13 @@ public class AlexRosa_TP4_Ejer_2a_Class {
 			double multiNumeros = 0;
 			for(int i = 0;  i < numerosArray.length; i++) {
 				if(multiNumeros == 0) {
-					multiNumeros = Double.valueOf(numerosArray[i]);
+					multiNumeros = Double.parseDouble(numerosArray[i]); 
 				}
-				multiNumeros = multiNumeros * Double.valueOf(numerosArray[i]);
+				else{
+					multiNumeros = multiNumeros * Double.valueOf(numerosArray[i]);
+					System.out.println(multiNumeros);
+				}
+				
 			}
 			System.out.println("=====================================================");
 			System.out.printf("La multiplicacion de los numeros es: %.2f" , multiNumeros);
